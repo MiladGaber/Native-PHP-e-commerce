@@ -41,12 +41,5 @@ include('contact.php');
     <?php
 
 include('footer.php');
-
-
-
-
-// welcome to here 
-
-// Welcome Milad
 ?>
    

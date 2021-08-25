@@ -27,7 +27,7 @@ include('header.php');
                   <a href="blog-details.html" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
 
                   <div class="down-content">
-                    <h4><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
+                    <h4><a href="blog-details.php">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
 
                     <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
                   </div>
@@ -35,10 +35,10 @@ include('header.php');
               </div>
               <div class="col-md-6">
                 <div class="service-item">
-                  <a href="blog-details.html" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
+                  <a href="blog-details.php" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
 
                   <div class="down-content">
-                    <h4><a href="blog-details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
+                    <h4><a href="blog-details.php">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
 
                     <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
                   </div>
@@ -46,10 +46,10 @@ include('header.php');
               </div>
               <div class="col-md-6">
                 <div class="service-item">
-                  <a href="blog-details.html" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
+                  <a href="blog-details.php" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
 
                   <div class="down-content">
-                    <h4><a href="blog-details.html">Aperiam modi voluptatum fuga officiis cumque</a></h4>
+                    <h4><a href="blog-details.php">Aperiam modi voluptatum fuga officiis cumque</a></h4>
 
                     <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
                   </div>
@@ -58,10 +58,10 @@ include('header.php');
 
               <div class="col-md-6">
                 <div class="service-item">
-                  <a href="blog-details.html" class="services-item-image"><img src="assets/images/blog-4-370x270.jpg" class="img-fluid" alt=""></a>
+                  <a href="blog-details.php" class="services-item-image"><img src="assets/images/blog-4-370x270.jpg" class="img-fluid" alt=""></a>
 
                   <div class="down-content">
-                    <h4><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
+                    <h4><a href="blog-details.php">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
 
                     <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
                   </div>
@@ -69,10 +69,10 @@ include('header.php');
               </div>
               <div class="col-md-6">
                 <div class="service-item">
-                  <a href="blog-details.html" class="services-item-image"><img src="assets/images/blog-5-370x270.jpg" class="img-fluid" alt=""></a>
+                  <a href="blog-details.php" class="services-item-image"><img src="assets/images/blog-5-370x270.jpg" class="img-fluid" alt=""></a>
 
                   <div class="down-content">
-                    <h4><a href="blog-details.html">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
+                    <h4><a href="blog-details.php">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
 
                     <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
                   </div>
@@ -80,10 +80,10 @@ include('header.php');
               </div>
               <div class="col-md-6">
                 <div class="service-item">
-                  <a href="blog-details.html" class="services-item-image"><img src="assets/images/blog-6-370x270.jpg" class="img-fluid" alt=""></a>
+                  <a href="blog-details.php" class="services-item-image"><img src="assets/images/blog-6-370x270.jpg" class="img-fluid" alt=""></a>
 
                   <div class="down-content">
-                    <h4><a href="blog-details.html">Aperiam modi voluptatum fuga officiis cumque</a></h4>
+                    <h4><a href="blog-details.php">Aperiam modi voluptatum fuga officiis cumque</a></h4>
 
                     <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
                   </div>
@@ -123,9 +123,9 @@ include('header.php');
               <h5>Lorem ipsum dolor sit amet</h5>
             </div>
 
-            <p><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisicing.</a></p>
-            <p><a href="blog-details.html">Et animi voluptatem, assumenda enim, consectetur quaerat!</a></p>
-            <p><a href="blog-details.html">Ducimus magni eveniet sit doloremque molestiae alias mollitia vitae.</a></p>
+            <p><a href="blog-details.php">Lorem ipsum dolor sit amet, consectetur adipisicing.</a></p>
+            <p><a href="blog-details.php">Et animi voluptatem, assumenda enim, consectetur quaerat!</a></p>
+            <p><a href="blog-details.php">Ducimus magni eveniet sit doloremque molestiae alias mollitia vitae.</a></p>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ include('header.php');
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+              <p>Copyright © 2020 Company Name - </p>
             </div>
           </div>
         </div>

@@ -47,11 +47,11 @@
      <header class=""> 
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.php"><h2>Online Store <em>Website</em></h2></a>
+          <!-- <a class="navbar-brand" href="index.php"><h2>Online Store <em>Website</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
+          </button> -->
+          <div class="" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home
@@ -80,32 +80,21 @@
                 </li>
             </ul>
           </div>
-        </div>
-        <div div class="right-menu">
+
+          <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <div div class="right-menu">
 		<div class="header-search"></div>
 					<span class="separator"></span>
 			<a href="http://localhost/Native-PHP-e-commerce/online-store-website-template/login.php" class="login navbar-light">Login</a>
 			<span class="separator"></span>
-			<a id="gc_menu_signup" href="http://localhost/Native-PHP-e-commerce/online-store-website-template/sign-up.php" class="gc-signup">Sign up</a>
+			<a id="gc_menu_signup" href="http://localhost/Native-PHP-e-commerce/online-store-website-template/sign-up.php#" class="gc-signup">Sign up</a>
 					<span class="separator"></span>
-<!-- 		
-		<div id="search_bar" style="display: none;">
-			<div class="search-bar-inner"><abbr></abbr></div>
-			<form id="frmSearch" name="frmSearch" action="#" method="post">
-				<div class="search-box">
-					<input id="keyword" name="keyword" class="keyword" value="Search...">
-				</div>
-			</form>
-		</div>
-	</div>
-  <div id="search_bar">
-						<form id="frmSearch" name="frmSearch" action="#" method="post">
-							<div class="search-box">
-								<input id="keyword" name="keyword" class="keyword" value="Search..." />
-								<input type="submit" value="" class="btn-search" />
-							</div>
-						</form>
-					</div> -->
+
+        </div>
+     
       </nav>
      
 

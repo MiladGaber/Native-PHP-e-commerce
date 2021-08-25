@@ -13,7 +13,7 @@
 
 <style >
   body{
-	background:black;
+	background:white;
 }
 
 .container{
@@ -24,9 +24,9 @@
 }
 .form-control{
 	border:none;
-	border-bottom:3px solid dodgerblue;
-	background:black;
-	color:white;
+	border-bottom:3px solid burlywood;
+	background:#e2c7a54f;
+	color:black;
 	border-radius:0px;
 }
 
@@ -39,11 +39,11 @@
 }
 
 form h2{
-	color:white;
+	color:burlywood;
 }
 
 .checkbox span{
-	color:white;
+	color:burlywood;
 }
 
 .checkbox{
@@ -89,6 +89,12 @@ button{
 	}
 	
 }
+
+button{
+	color: white;
+
+	background-color: burlywood;
+}
 </style>
 
 
@@ -120,11 +126,11 @@ button{
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> <span>Remember me</span></label>
     </div>
-    <button type="submit" class="btn btn-success">Submit <i class="glyphicon glyphicon-send"></i></button>
+    <button type="submit" class="btn ">Submit <i class="glyphicon glyphicon-send"></i></button>
   </form>
   </div>
 </div>
 
 
 </body>
-</html>
+</html

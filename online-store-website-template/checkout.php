@@ -202,7 +202,7 @@ include('header.php');
                         <label class="control-label">
                              <input type="checkbox">
 
-                             I agree with the <a href="terms.html" target="_blank">Terms &amp; Conditions</a>
+                             I agree with the <a href="terms.php" target="_blank">Terms &amp; Conditions</a>
                         </label>
                    </div>
 
@@ -222,7 +222,7 @@ include('header.php');
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+              <p>Copyright © 2020 Company Name </p>
             </div>
           </div>
         </div>

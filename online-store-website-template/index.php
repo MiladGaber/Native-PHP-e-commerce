@@ -25,20 +25,18 @@ include('best-features.php');
 include('happy-clintes.php');
 
 ?>
-      <?php
+<?php
 
 include('services.php');
 
 ?>
-      <?php
+<?php
 
 include('contact.php');
 
 ?>
 
-
-
-    <?php
+<?php
 
 include('footer.php');
 ?>

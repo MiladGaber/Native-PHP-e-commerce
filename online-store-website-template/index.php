@@ -45,6 +45,12 @@ include('footer.php');
 
 
 
+<<<<<<< HEAD
 // welcome 
+=======
+// welcome to here 
+
+// Welcome Milad
+>>>>>>> 63f1e8d195476b2ac9e06a9ae2f848dc9a9ea65a
 ?>
    

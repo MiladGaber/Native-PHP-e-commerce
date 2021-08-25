@@ -5,7 +5,7 @@
             <div class="section-heading">
               <h2>Happy Clients</h2>
 
-              <a href="testimonials.html">read more <i class="fa fa-angle-right"></i></a>
+              <a href="testimonials.php">read more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-12">

@@ -25,22 +25,21 @@ include('best-features.php');
 include('happy-clintes.php');
 
 ?>
-      <?php
+<?php
 
 include('services.php');
 
 ?>
-      <?php
+<?php
 
 include('contact.php');
 
 ?>
 
-
-
-    <?php
+<?php
 
 include('footer.php');
+<<<<<<< HEAD
 
 
 
@@ -52,5 +51,7 @@ include('footer.php');
 
 // Welcome Milad
 >>>>>>> 63f1e8d195476b2ac9e06a9ae2f848dc9a9ea65a
+=======
+>>>>>>> 02c17e30d8c5c09da0f1ea3dce2a3a692410dffa
 ?>
    

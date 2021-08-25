@@ -5,7 +5,7 @@
             <div class="section-heading">
               <h2>Latest blog posts</h2>
 
-              <a href="blog.html">read more <i class="fa fa-angle-right"></i></a>
+              <a href="blog.php">read more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
 

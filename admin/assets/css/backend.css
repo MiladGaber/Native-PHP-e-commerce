@@ -1,0 +1,17 @@
+/* Main */
+body{
+    background-color: #F4F4F4;
+}
+
+
+/* login form */
+.login{
+    width: 300px;
+    margin: 100px auto;
+}
+.login .form-control{
+    background-color: #EAEAEA;
+}
+.login input{ 
+    margin-bottom: 10px;
+}

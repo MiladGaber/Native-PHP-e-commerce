@@ -11,6 +11,93 @@
 
 <link rel="stylesheet" href="assets/css/style.css">
 
+<style >
+  body{
+	background:white;
+}
+
+.container{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+}
+.form-control{
+	border:none;
+	border-bottom:3px solid burlywood;
+	background:#e2c7a54f;
+	color:black;
+	border-radius:0px;
+}
+
+.row{
+	width:60%;
+	margin-top:50px;
+	border: 3px solid orange;
+	border-radius:14px;
+	height:auto;
+}
+
+form h2{
+	color:burlywood;
+}
+
+.checkbox span{
+	color:burlywood;
+}
+
+.checkbox{
+	float:left;
+}
+
+button{
+	float:right;
+	width:120px;
+}
+
+@media(max-width:768px){
+	body{
+		font-size:10px;
+	}
+	
+	h2{
+		font-size:15px;
+	}
+	
+	input[type=text]{
+		font-size:13px;
+	}
+	
+	input[type=password]{
+		font-size:13px;
+	}
+	
+	input[type=email]{
+		font-size:13px;
+	}
+	
+	button{
+		width:80px;
+		height:30px;
+		float:right;
+		font-size:10px;
+		margin-bottom:10px;
+	}
+	
+	.checkbox{
+		display:inline;
+	}
+	
+}
+
+button{
+	color: white;
+
+	background-color: burlywood;
+}
+</style>
+
+
 </head>
 <body>
 
@@ -39,11 +126,11 @@
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> <span>Remember me</span></label>
     </div>
-    <button type="submit" class="btn btn-success">Submit <i class="glyphicon glyphicon-send"></i></button>
+    <button type="submit" class="btn ">Submit <i class="glyphicon glyphicon-send"></i></button>
   </form>
   </div>
 </div>
 
 
 </body>
-</html>
+</html

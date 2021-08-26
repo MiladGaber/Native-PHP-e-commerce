@@ -25,7 +25,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   $name  = CleanInputs($_POST['name']);
   $email = CleanInputs($_POST['email']);
   $password = $_POST['password'] ;
-  $dep_id   =  filter_var($_POST['dep_id'],FILTER_SANITIZE_NUMBER_INT);
 
 
 

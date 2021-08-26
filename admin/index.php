@@ -1,13 +1,13 @@
 <?php   
-    session_start();
+    require './helpers/functions.php';
+    // session_start();
     // print_r($_SESSION);
+
+    $pageTitle = 'Admin Login';
 
     if(isset($_SESSION['username'])){
         header("Location: dashboard.php");
     }
-
-    
-
 
 
     include "includes/templates/header.php"; 
@@ -18,7 +18,6 @@
         $username =  $_POST['user'];
         $password = $_POST['pass'];
         
-
         $errors = [];
 
         if(empty($username)){
@@ -49,16 +48,14 @@
            $stmt = $con->prepare("select Username , Password from users where Username = ? and password = ? and GroupID = ?");
            $stmt->execute(array($username,$hashed_password,1));
            $num = $stmt->rowCount();
-
-           echo $num;
-
            if($num == 1){
              // code 
              $_SESSION['username'] = $username;
              header("Location: dashboard.php");
 
            }else{
-               echo 'error try again';
+               
+               echo '<br><h6 class="text-danger text-center"> *Login Faild! <br> Username or Password Not Valid!!</h6>';
            }
 
         }
@@ -72,6 +69,7 @@
 
 
     <form class="login" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+            <h4 class="text-center">Admin Login</h4>
             <input class="form-control" type="text" name="user" placeholder="Username" autocomplete="off">
             <input class="form-control" type="password" name="pass" placeholder="Password" autocomplete="new-password"> 
             <button class="btn btn-primary w-100" type="submit" >Submit</button>

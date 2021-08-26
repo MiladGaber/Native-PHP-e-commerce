@@ -63,7 +63,7 @@
 
                
                 
-                <li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>
+                <li class="nav-item"><a class="nav-link" href="order_process.php">Checkout</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
 

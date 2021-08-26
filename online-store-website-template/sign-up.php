@@ -1,3 +1,114 @@
+
+
+
+<?php 
+
+// require 'db-connection.php';
+
+function CleanInputs($input){
+
+// return stripslashes(htmlspecialchars(trim($input)));
+$input = trim($input);
+$input = stripslashes($input);
+$input = htmlspecialchars($input);
+
+return $input;
+}
+
+
+
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+  $errors = [];
+
+  $name  = CleanInputs($_POST['name']);
+  $email = CleanInputs($_POST['email']);
+  $password = $_POST['password'] ;
+  $dep_id   =  filter_var($_POST['dep_id'],FILTER_SANITIZE_NUMBER_INT);
+
+
+
+
+  if(empty($name)){
+
+    $errors['Name'] = " Field Required";
+
+  }elseif(!preg_match("/^[a-zA-Z\s*']+$/",$name)){
+
+    $errors['Name'] = "Invalid String";
+  }
+
+
+
+  if(empty($email)){
+
+    $errors['Email'] = " Field Required";
+
+  }elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+     $errors['Email'] = "Invalid Email";
+  }
+
+
+  if(empty($password)){
+
+    $errors['Password'] = " Field Required";
+
+  }elseif(strlen($password < 6)){
+
+    $errors['Password'] = "Invalid Length";
+  }
+
+
+
+
+
+    if(count($errors) > 0){
+
+        foreach($errors as $key => $error){
+
+            echo '* '.$key.' : '.$error.'<br>';
+        }
+     }else{
+
+   $password =   sha1($password); // md5
+      
+
+   // code 
+   $sql = "insert into users (name,email,password,dep_id) values ('$name','$email','$password')";
+
+    $op =  mysqli_query($con,$sql);
+
+    if($op){
+
+        echo 'data Inserted';
+    }else{
+        echo 'Error Try Again';
+
+      // echo  mysqli_error($con);
+
+
+    }
+
+
+    }
+
+   
+
+
+}
+
+
+
+
+  # Fetch departments 
+
+  // $sql = "select * from departments";
+  // $op  = mysqli_query($con,$sql); 
+
+  // mysqli_close($con);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +135,8 @@
 }
 .form-control{
 	border:none;
-	border-bottom:3px solid burlywood;
-	background:#e2c7a54f;
+	border-bottom:3px solid blue;
+	background:cyan;
 	color:black;
 	border-radius:0px;
 }
@@ -33,17 +144,17 @@
 .row{
 	width:60%;
 	margin-top:50px;
-	border: 3px solid orange;
+	border: 3px solid blue;
 	border-radius:14px;
 	height:auto;
 }
 
 form h2{
-	color:burlywood;
+	color:blue;
 }
 
 .checkbox span{
-	color:burlywood;
+	color:blue;
 }
 
 .checkbox{
@@ -93,7 +204,7 @@ button{
 button{
 	color: white;
 
-	background-color: burlywood;
+	background-color: blue;
 }
 </style>
 

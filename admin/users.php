@@ -1,8 +1,9 @@
 <?php
 
+require './helpers/functions.php';
 $pageTitle = 'Dashboard';
+include "includes/templates/header.php"; 
 
-require 'includes/templates/index.php';
 
 if(isset($_SESSION['username'])){
     echo 'welcome '. $_SESSION['username'];
@@ -11,5 +12,6 @@ if(isset($_SESSION['username'])){
 
     header("Location: index.php");
 }
+
 
 ?>

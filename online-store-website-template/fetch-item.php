@@ -19,7 +19,7 @@ if($statement->execute())
   $output .= '
   <div class="col-md-3" style="margin-top:12px;">  
             <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px; height:430px;" align="center">
-             <img src="images/'.$row["image"].'" class="img-responsive" />
+             <img src="assets/images/'.$row["image"].'" class="img-responsive" />
              <br />
              <h4 class="text-info">'.$row["name"].'</h4>
              <h4 class="text-danger">$ '.$row["price"].'</h4>

@@ -12,7 +12,7 @@ $id = Sanitize($_GET['id'],1);
      $message = "Invalid Id";
 
  }else{
-   $stmt = $con->prepare("delete from categories where ID =?");
+   $stmt = $con->prepare("delete from users where UserID =?");
    $stmt->execute(array($id));
     $num = $stmt->rowCount();
         if($num == 1){

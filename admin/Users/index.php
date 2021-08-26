@@ -23,11 +23,11 @@ require '../connectDB.php';
 <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">All Categories</h1><br>
+                        <h1 class="mt-4">All Members</h1><br>
                         <?php
 
  # fetch all admins Role ... 
-$stmt = $con->prepare("select * from categories");
+$stmt = $con->prepare("select * from users");
 $stmt->execute();
 $num = $stmt->rowCount();
 if($num > 0){
@@ -44,10 +44,10 @@ if($num > 0){
     <thead>
       <tr class="text-center">
         <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Ordering</th>
-        <th>Visibility</th>
+        <th>Username</th>
+        <th>Full Name</th>
+        <th>Role</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -55,14 +55,14 @@ if($num > 0){
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     ?> 
         <tr class="text-center">
-            <td><?php echo $row['ID']; ?></td>
-            <td><?php echo $row['Name'];?></td>
-            <td><?php echo $row['Description'];?></td>
-            <td><?php echo $row['Ordering'];?></td>
-            <td><?php echo $row['Visibility'];?></td>
+            <td><?php echo $row['UserID']; ?></td>
+            <td><?php echo $row['Username'];?></td>
+            <td><?php echo $row['FullName'];?></td>
+            <td><?php echo $row['GroupID'];?></td>
+                                               
             <td>
-            <a href='delete.php?id=<?php echo $row['ID'];?>' class='btn btn-danger m-r-1em'>Delete</a>
-            <a href='edit.php?id=<?php echo $row['ID'];?>' class='btn btn-primary m-r-1em'>Edit</a>       
+            <a href='delete.php?id=<?php echo $row['UserID'];?>' class='btn btn-danger m-r-1em'>Delete</a>
+            <a href='edit.php?id=<?php echo $row['UserID'];?>' class='btn btn-primary m-r-1em'>Edit</a>       
             </td> 
                                           
         </tr>

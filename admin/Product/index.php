@@ -27,7 +27,7 @@ require '../connectDB.php';
                         <?php
 
  # fetch all admins Role ... 
-$stmt = $con->prepare("select * from categories");
+$stmt = $con->prepare("select * from items");
 $stmt->execute();
 $num = $stmt->rowCount();
 if($num > 0){

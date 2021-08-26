@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2021 at 10:03 AM
+-- Generation Time: Aug 26, 2021 at 10:41 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -24,6 +24,73 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Description` text NOT NULL,
+  `Ordering` int(11) NOT NULL,
+  `Visibility` tinyint(4) NOT NULL DEFAULT 0,
+  `Allow_Comment` tinyint(4) NOT NULL DEFAULT 0,
+  `Allow_Ads` tinyint(4) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`ID`, `Name`, `Description`, `Ordering`, `Visibility`, `Allow_Comment`, `Allow_Ads`) VALUES
+(1, 'Decoration', 'Decoration - Turn plants into a summer-fresh display', 1, 1, 0, 0),
+(3, 'kitchen', 'A kitchen for all occasions', 1, 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `c_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `comment_date` date NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `items`
+--
+
+CREATE TABLE `items` (
+  `item_id` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Description` text NOT NULL,
+  `Price` varchar(255) NOT NULL,
+  `Add_Date` date NOT NULL,
+  `Country_Made` varchar(255) NOT NULL,
+  `Image` varchar(255) NOT NULL,
+  `Status` varchar(255) NOT NULL,
+  `Rating` smallint(6) NOT NULL,
+  `Approve` tinyint(4) NOT NULL DEFAULT 0,
+  `Cat_ID` int(11) NOT NULL,
+  `Member_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`item_id`, `Name`, `Description`, `Price`, `Add_Date`, `Country_Made`, `Image`, `Status`, `Rating`, `Approve`, `Cat_ID`, `Member_ID`) VALUES
+(1, 'SORTERA', 'Waste sorting bin with lid37 l', '299', '2021-08-26', 'Egypt', 'sortera1.jpg', 'valid', 0, 0, 3, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `order_item`
 --
 
@@ -33,7 +100,7 @@ CREATE TABLE `order_item` (
   `order_item_name` varchar(250) NOT NULL,
   `order_item_quantity` int(11) NOT NULL,
   `order_item_price` double(12,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -58,7 +125,7 @@ CREATE TABLE `order_table` (
   `customer_pin` varchar(30) NOT NULL,
   `customer_state` varchar(250) NOT NULL,
   `customer_country` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -75,24 +142,24 @@ CREATE TABLE `tbl_product` (
   `cat_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `code` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_product`
 --
 
 INSERT INTO `tbl_product` (`id`, `name`, `image`, `price`, `item_discribtion`, `cat_id`, `user_id`, `code`) VALUES
-(1, 'pdt 1', 'imgs/pdt1.jpg', 350.00, '', 0, 0, ''),
+(1, 'pdt 1', 'sortera1.jpg', 350.00, '', 0, 0, ''),
 (2, 'pdt 2', 'pdt2.jpg', 460.00, '', 0, 0, ''),
-(3, 'pdt 3', 'pdt4.jpg', 400.00, '', 0, 0, ''),
-(4, 'pdt 4', 'pdt3.jpg', 530.00, '', 0, 0, ''),
+(3, 'pdt 3', 'pdt3.jpg', 400.00, '', 0, 0, ''),
+(4, 'pdt 4', 'pdt4.jpg', 530.00, '', 0, 0, ''),
 (5, 'pdt 5', 'pdt5.jpg', 400.00, '', 0, 0, ''),
 (6, 'pdt 6', 'pdt6.jpg', 320.00, '', 0, 0, ''),
-(7, 'pdt 7', '0', 270.00, '', 0, 0, ''),
-(8, 'white chair', '0', 1500.00, '', 0, 0, '3DcAM01'),
-(9, 'pink chair', '0', 800.00, '', 0, 0, 'USB02'),
-(10, 'wooden chair', '0', 300.00, '', 0, 0, 'wristWear03'),
-(11, 'sofa', '0', 800.00, '', 0, 0, 'LPN45');
+(7, 'pdt 7', 'pdt1.jpg', 270.00, '', 0, 0, ''),
+(8, 'white chair', 'sortera1.jpg', 1500.00, '', 0, 0, '3DcAM01'),
+(9, 'pink chair', 'pdt6.jpg', 800.00, '', 0, 0, 'USB02'),
+(10, 'wooden chair', 'pdt4.jpg', 300.00, '', 0, 0, 'wristWear03'),
+(11, 'sofa', 'sortera1.jpg', 800.00, '', 0, 0, 'LPN45');
 
 -- --------------------------------------------------------
 
@@ -112,8 +179,41 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserID`, `Username`, `Password`, `Email`, `FullName`, `GroupID`, `TrustStatus`, `RegStatus`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'milad.gaber00@gmail.com', 'Miald Gaber Milad', 1, 0, 0);
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Name` (`Name`),
+  ADD KEY `ID` (`ID`),
+  ADD KEY `Name_2` (`Name`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`c_id`),
+  ADD KEY `item_id` (`item_id`),
+  ADD KEY `item_id_2` (`item_id`),
+  ADD KEY `item_id_3` (`item_id`);
+
+--
+-- Indexes for table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`item_id`),
+  ADD KEY `cat_1` (`Cat_ID`),
+  ADD KEY `member_1` (`Member_ID`);
 
 --
 -- Indexes for table `order_item`
@@ -137,8 +237,27 @@ ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`UserID`),
+  ADD UNIQUE KEY `Username` (`Username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order_item`
@@ -147,10 +266,27 @@ ALTER TABLE `order_item`
   MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tbl_product`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `tbl_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `users`
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `items_comment` FOREIGN KEY (`item_id`) REFERENCES `items` (`item_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `items`
+--
+ALTER TABLE `items`
+  ADD CONSTRAINT `cat_1` FOREIGN KEY (`Cat_ID`) REFERENCES `categories` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `member_1` FOREIGN KEY (`Member_ID`) REFERENCES `users` (`UserID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

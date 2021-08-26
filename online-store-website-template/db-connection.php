@@ -6,3 +6,4 @@
 $connect = new PDO("mysql:host=localhost;dbname=ecomdb", "root", "");
 
 ?>
+

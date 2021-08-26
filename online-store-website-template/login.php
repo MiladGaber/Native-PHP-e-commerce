@@ -78,11 +78,25 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
          echo 'Invalid email || Password ';
      }
 
-
-
     }
 
     mysqli_close($con);
+
+    $stmt = $con->prepare("select Username , Password from users where Username = ? and password = ? and GroupID = ?");
+    $stmt->execute(array($username,$hashed_password,0));
+    $num = $stmt->rowCount();
+    if($num == 1){
+      // code 
+      $_SESSION['username'] = $username;
+      header("Location: dashboard.php");
+
+    }else{
+        
+        echo '<br><h6 class="text-danger text-center"> *Login Faild! <br> Username or Password Not Valid!!</h6>';
+    }
+
+
+
 
 
 }

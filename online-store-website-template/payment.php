@@ -3,13 +3,16 @@
 
 //payment.php
 
-include('database_connection.php');
+include('db-connection.php');
 
 session_start();
 
 if(isset($_POST["token"]))
 {
  require_once 'stripe_vendor/autoload.php';
+
+ Stripe.setPublishableKey("<?php echo STRIPE_PUBLISHABLE_KEY; ?>");
+
 
  \Stripe\Stripe::setApiKey('sk_test_M8aSXyC69s7owKnr7zKlAe8s00BJIaNslz');
 
@@ -103,3 +106,4 @@ if(isset($_POST["token"]))
 }
 
 ?>
+

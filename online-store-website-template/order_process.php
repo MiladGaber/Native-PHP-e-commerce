@@ -57,12 +57,32 @@ $order_details .= '</table>';
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://js.stripe.com/v2/"></script>
   <script src="js/jquery.creditCardValidator.js"></script>
+
+  <link rel="icon" href="assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>online</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
   <style>
   .popover
   {
       width: 100%;
       max-width: 800px;
+
+      
   }
+
+  a{
+        color: white;
+        font-weight: bold;
+      }
   .require
   {
    border:1px solid #FF0000;
@@ -71,6 +91,87 @@ $order_details .= '</table>';
   </style>
  </head>
  <body>
+     <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+     <header class=""> 
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="index.php"><h2>Online Store <em>Website</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+          <div class="" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+                </li> 
+
+                <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+
+               
+                
+                <li class="nav-item"><a class="nav-link" href="order_process.php">Checkout</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+                    
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="about-us.php">About Us</a>
+                      <a class="dropdown-item" href="blog.php">Blog</a>
+                      <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                      <a class="dropdown-item" href="terms.php">Terms</a>
+                    </div>
+                </li>
+            </ul>
+          </div>
+
+          <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <div div class="right-menu">
+		<div class="header-search"></div>
+					<span class="separator"></span>
+			<a href="http://localhost/Native-PHP-e-commerce/online-store-website-template/login.php" class="login navbar-light">Login</a>
+			<span class="separator"></span>
+			<a id="gc_menu_signup" href="http://localhost/Native-PHP-e-commerce/online-store-website-template/sign-up.php#" class="gc-signup">Sign up</a>
+					<span class="separator"></span>
+
+        </div>
+     
+      </nav>
+     
+
+    </header> 
+
+    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>Lorem ipsum dolor sit amet</h4>
+              <h2>Checkout</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br>
   <div class="container">
    <br />
    <h3 align="center"><a href="#">PHP Shopping Cart with Stripe Payment Integration</a></h3>
@@ -175,8 +276,11 @@ $order_details .= '</table>';
     </div>
    </div>
   </div>
- </body>
-</html>
+ <?php
+
+ include('footer.php');
+
+ ?>
 
 <script>
 

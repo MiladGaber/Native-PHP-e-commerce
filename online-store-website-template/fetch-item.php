@@ -2,7 +2,7 @@
 
 //fetch_item.php
 
-include('database_connection.php');
+include('db-connection.php');
 
 $query = "
 SELECT * FROM tbl_product ORDER BY id ASC

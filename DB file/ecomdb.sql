@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2021 at 06:53 AM
+-- Generation Time: Aug 26, 2021 at 10:03 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -24,102 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `order_item`
 --
 
-CREATE TABLE `users` (
-  `UserID` int(11) NOT NULL,
-  `Username` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `FullName` varchar(255) NOT NULL COMMENT 'User role',
-  `GroupID` int(11) NOT NULL DEFAULT 0,
-  `TrustStatus` int(11) NOT NULL DEFAULT 0 COMMENT 'Seller Rank',
-  `RegStatus` int(11) NOT NULL DEFAULT 0 COMMENT 'Registration status'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`UserID`, `Username`, `Password`, `Email`, `FullName`, `GroupID`, `TrustStatus`, `RegStatus`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'milad.gaber00@gmail.com', 'Miald Gaber', 1, 0, 0);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`UserID`),
-  ADD UNIQUE KEY `Username` (`Username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
--- Table structure for table `tbl_product`
---
-
-CREATE TABLE `tbl_product` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `price` double(10,2) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_product`
---
-
-INSERT INTO `tbl_product` (`id`, `name`, `price`) VALUES
-(1, 'pdt 1', 350.00),
-(2, 'pdt 2',  460.00),
-(3, 'pdt 3', 400.00),
-(4, 'pdt 4', 530.00),
-(5, 'pdt 5', 400.00),
-(6, 'pdt 6', 320.00),
-(7, 'pdt 7',  270.00);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbl_product`
---
-ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_product`
---
-ALTER TABLE `tbl_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
-
---
--- Database: `testing`
---
+CREATE TABLE `order_item` (
+  `order_item_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `order_item_name` varchar(250) NOT NULL,
+  `order_item_quantity` int(11) NOT NULL,
+  `order_item_price` double(12,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -144,46 +58,58 @@ CREATE TABLE `order_table` (
   `customer_pin` varchar(30) NOT NULL,
   `customer_state` varchar(250) NOT NULL,
   `customer_country` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `order_table`
---
-ALTER TABLE `order_table`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `order_table`
---
-ALTER TABLE `order_table`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
-
-
---
--- Database: `testing`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_item`
+-- Table structure for table `tbl_product`
 --
 
-CREATE TABLE `order_item` (
-  `order_item_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `order_item_name` varchar(250) NOT NULL,
-  `order_item_quantity` int(11) NOT NULL,
-  `order_item_price` double(12,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tbl_product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  `price` double(10,2) NOT NULL,
+  `item_discribtion` text NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `code` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_product`
+--
+
+INSERT INTO `tbl_product` (`id`, `name`, `image`, `price`, `item_discribtion`, `cat_id`, `user_id`, `code`) VALUES
+(1, 'pdt 1', 'imgs/pdt1.jpg', 350.00, '', 0, 0, ''),
+(2, 'pdt 2', 'pdt2.jpg', 460.00, '', 0, 0, ''),
+(3, 'pdt 3', 'pdt4.jpg', 400.00, '', 0, 0, ''),
+(4, 'pdt 4', 'pdt3.jpg', 530.00, '', 0, 0, ''),
+(5, 'pdt 5', 'pdt5.jpg', 400.00, '', 0, 0, ''),
+(6, 'pdt 6', 'pdt6.jpg', 320.00, '', 0, 0, ''),
+(7, 'pdt 7', '0', 270.00, '', 0, 0, ''),
+(8, 'white chair', '0', 1500.00, '', 0, 0, '3DcAM01'),
+(9, 'pink chair', '0', 800.00, '', 0, 0, 'USB02'),
+(10, 'wooden chair', '0', 300.00, '', 0, 0, 'wristWear03'),
+(11, 'sofa', '0', 800.00, '', 0, 0, 'LPN45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `UserID` int(11) NOT NULL,
+  `Username` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `FullName` varchar(255) NOT NULL COMMENT 'User role',
+  `GroupID` int(11) NOT NULL DEFAULT 0,
+  `TrustStatus` int(11) NOT NULL DEFAULT 0 COMMENT 'Seller Rank',
+  `RegStatus` int(11) NOT NULL DEFAULT 0 COMMENT 'Registration status'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -193,7 +119,22 @@ CREATE TABLE `order_item` (
 -- Indexes for table `order_item`
 --
 ALTER TABLE `order_item`
-  ADD PRIMARY KEY (`order_item_id`);
+  ADD UNIQUE KEY `order_item_id` (`order_item_id`);
+
+--
+-- Indexes for table `order_table`
+--
+ALTER TABLE `order_table`
+  ADD PRIMARY KEY (`order_id`),
+  ADD UNIQUE KEY `order_id` (`order_id`),
+  ADD UNIQUE KEY `order_number` (`order_number`),
+  ADD UNIQUE KEY `email_address` (`email_address`);
+
+--
+-- Indexes for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -205,4 +146,13 @@ ALTER TABLE `order_item`
 ALTER TABLE `order_item`
   MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT;
 
+--
+-- AUTO_INCREMENT for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

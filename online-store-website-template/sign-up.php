@@ -3,7 +3,7 @@
 
 <?php 
 
-// require 'db-connection.php';
+require 'db-connection.php';
 
 function CleanInputs($input){
 
@@ -84,10 +84,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }else{
         echo 'Error Try Again';
 
-      // echo  mysqli_error($con);
-
+      echo  mysqli_error($con);
 
     }
+
+    
 
 
     }
@@ -96,16 +97,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 }
-
-
-
-
-  # Fetch departments 
-
-  // $sql = "select * from departments";
-  // $op  = mysqli_query($con,$sql); 
-
-  // mysqli_close($con);
 
 ?>
 <!DOCTYPE html>

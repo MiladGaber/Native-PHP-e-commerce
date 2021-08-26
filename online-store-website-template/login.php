@@ -1,93 +1,83 @@
-
 <?php 
 
-session_start();
-
-
-function CleanInputs($input){
-
-// return stripslashes(htmlspecialchars(trim($input)));
-$input = trim($input);
-$input = stripslashes($input);
-$input = htmlspecialchars($input);
-
-return $input;
-}
-
-
-
+require './helpers/functions.php';
+require 'db-connection.php';
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-  $errors = [];
+    $email = CleanInputs($_POST['email']) ;
+    $password = $_POST['password'];
 
-  $email = CleanInputs($_POST['email']);
-  $password = $_POST['password'] ;
+    $errors = [];
+    if(!validate($email,1)){
 
+       $errors['email'] = "Email Field Required";
 
-
-  if(empty($email)){
-
-    $errors['Email'] = " Field Required";
-
-  }elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-     $errors['Email'] = "Invalid Email";
-  }
+    }elseif(!validate($email,3)){
+      $errors['email']  = "Invalid Email";
+    }
 
 
-  if(empty($password)){
+    if(!validate($password,4)){
 
-    $errors['Password'] = " Field Required";
-
-  }elseif(strlen($password < 6)){
-
-    $errors['Password'] = "Invalid Length";
-  }
-
+       $errors['password'] = "Password Length Must > 5 ch";
+    }
 
 
     if(count($errors) > 0){
 
-        foreach($errors as $key => $error){
 
-            echo '* '.$key.' : '.$error.'<br>';
-        }
-     }else{
-
-
-      // Login LOgic 
-
-
-      $password = sha1($password);
-
-
-     $sql = "select * from users where email = '$email' and password = '$password'";
-
-     $op = mysqli_query($con,$sql);
-
-     if(mysqli_num_rows($op) == 1){
-         // code 
-       $data = mysqli_fetch_assoc($op);
-
-       $_SESSION['user'] = $data;
-
-       header('Location: index.php');
-        
-
-     }else{
-         echo 'Invalid email || Password ';
+     foreach ($errors as $key => $value) {
+         # code...
+         echo '*'.$value.'<br>';
      }
+
+    }else{
+
+       // code .... 
+
+       $password = md5($password);
+
+       $sql = "select * from admins where email = '$email' and password = '$password'";
+
+       $op = mysqli_query($con,$sql);
+
+       $num = mysqli_num_rows($op);
+
+       if($num == 1){
+         // code 
+
+         $data = mysqli_fetch_assoc($op);
+
+         $_SESSION['user'] = $data;
+
+         header("Location: ".url(''));
+
+       }else{
+
+           echo 'error try again';
+       }
+
 
 
 
     }
 
-    mysqli_close($con);
+
 
 
 }
 
+
+
+
+
+
+
+
+
 ?>
+
 
 
 

@@ -16,7 +16,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -80,9 +79,11 @@
                 </li>
             </ul>
           </div>
+          $k = $_GET['k'];
 
-          <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="d-flex" method="get" action="products_search.php">
+            
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value='search 'autofocus/> 
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <div div class="right-menu">

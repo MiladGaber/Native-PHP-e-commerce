@@ -2,6 +2,7 @@
 
 include('header.php');
 
+require 'db-connection.php';
 ?>
 
  <!-- Page Content -->

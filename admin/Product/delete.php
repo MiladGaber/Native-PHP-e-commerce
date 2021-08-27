@@ -1,6 +1,7 @@
 <?php 
 
 require '../helpers/functions.php';
+require "../helpers/checkLogin.php";
  require '../connectDB.php';
  $pageTitle = 'Delete User';
 

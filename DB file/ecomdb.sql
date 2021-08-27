@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2021 at 10:41 AM
+-- Generation Time: Aug 27, 2021 at 09:51 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -183,7 +183,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UserID`, `Username`, `Password`, `Email`, `FullName`, `GroupID`, `TrustStatus`, `RegStatus`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'milad.gaber00@gmail.com', 'Miald Gaber Milad', 1, 0, 0);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'milad.gaber00@gmail.com', 'Miald Gaber Milad', 1, 0, 0),
+(3, 'Ali', '3861a60523ef89a017be166c5b325409', 'ali@eelu.edu.eg', 'ali salah', 0, 0, 0),
+(4, 'maggi', '21232f297a57a5a743894a0e4a801fc3', 'm@g.com', 'Maggi George', 1, 0, 0),
+(5, 'aaa', '772d0a6a1dedfdc37c8b62465fd017bf', 'm@m.com', 'aaaa', 0, 0, 0),
+(6, 'ahmed', 'dcddb75469b4b4875094e14561e573d8', 'a@a.com', 'ahmed', 0, 0, 0),
+(7, 'mohammed', '25f9e794323b453885f5181f1b624d0b', 'm@mmm.com', 'Mohammed Ali', 0, 0, 0),
+(8, 'mostafa', 'dcddb75469b4b4875094e14561e573d8', 'm@m.co', 'mostafa ali', 1, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -251,7 +257,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -269,7 +275,7 @@ ALTER TABLE `order_item`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

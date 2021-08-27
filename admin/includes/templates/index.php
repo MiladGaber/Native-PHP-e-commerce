@@ -1,11 +1,29 @@
 
 <?php 
+$pageTitle = 'All Members';
+
    require "helpers/functions.php";
    require "helpers/checkLogin.php";
-
    require "header.php";
    require "nav.php";
+    require 'connectDB.php';
+
+
+$stmt = $con->prepare("select count(UserID) from users");
+$stmt->execute();
+$usersCount= $stmt->fetchColumn();
+
+
+
+$stmt1 = $con->prepare("select count(ID) from categories");
+$stmt1->execute();
+$catCount= $stmt1->fetchColumn();
+$stmt3 = $con->prepare("select count(id) from tbl_product");
+$stmt3->execute();
+$proCount= $stmt3->fetchColumn();
+
 ?>
+
 
 <div id="layoutSidenav">
          
@@ -17,44 +35,35 @@
 
 <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
+                    <div class="container px-4">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-primary text-white mb-4 py-4">
+                                    <h4 class="card-body">Categories : <?php echo $catCount; ?></h4>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="Category/index.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-warning text-white mb-4 py-4">
+                                    <h4 class="card-body">Members : <?php echo $usersCount; ?></h4>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="Users/index.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-success text-white mb-4 py-4">
+                                    <h4 class="card-body">Products : <?php echo $proCount; ?> </h4>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="Product/index.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

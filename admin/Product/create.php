@@ -77,9 +77,8 @@ $pageTitle = 'Add New Category';
 
 
             <div class="container">
-                <h1 class="mt-4">Add Category</h1>
+                <h1 class="mt-4">Add Product</h1>
                 <ol class="breadcrumb mb-4">
-
 
                    <?php 
                         # Dispaly error messages .... 

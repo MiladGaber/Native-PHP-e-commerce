@@ -1,9 +1,15 @@
+<?php
+require './helpers/functions.php';
+ $logCase ="Login";
+$signUpCase ="Sign UP";
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,6 +31,18 @@
       a{
         color: white;
         font-weight: bold;
+      }
+      .logout{
+        background-color: transparent;
+        border:0;
+        color:white;
+        padding-bottom: 5px;
+        }
+      .login:hover,.logout:hover{
+        cursor: pointer;
+        padding-bottom: 5px;
+        color: #f33f3f !important;
+        border-bottom: 3px solid #f33f3f;
       }
     </style>
 
@@ -79,26 +97,25 @@
                 </li>
             </ul>
           </div>
-          $k = $_GET['k'];
 
-          <form class="d-flex" method="get" action="products_search.php">
-            
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value='search 'autofocus/> 
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
       <div div class="right-menu">
 		<div class="header-search"></div>
 					<span class="separator"></span>
-			<a href="http://localhost/Native-PHP-e-commerce/online-store-website-template/login.php" class="login navbar-light">Login</a>
-			<span class="separator"></span>
-			<a id="gc_menu_signup" href="http://localhost/Native-PHP-e-commerce/online-store-website-template/sign-up.php#" class="gc-signup">Sign up</a>
-					<span class="separator"></span>
 
+          <?php 
+          
+            if (isset($_SESSION['username'])) {
+              echo '<form action="logout.php" method="POST">
+                  <button class="logout navbar-light mx-3" type="submit" name="submit">Logout</button>
+              </form>';
+              } else {
+              echo '<a href="http://localhost/Native-PHP-e-commerce/online-store-website-template/login.php" class="login navbar-light mx-3">login</a>
+              ';
+            }
+          ?>
+          
         </div>
-     
       </nav>
-     
-
     </header> 
 
  

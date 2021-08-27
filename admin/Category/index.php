@@ -26,7 +26,7 @@ require '../connectDB.php';
                         <h1 class="mt-4">All Categories</h1><br>
                         <?php
 
- # fetch all admins Role ... 
+ # fetch all data  ... 
 $stmt = $con->prepare("select * from categories");
 $stmt->execute();
 $num = $stmt->rowCount();
